@@ -3,8 +3,8 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: ./gradlew build
-    command: ./gradlew bootrun
+  - init: gradle build
+    command: gradle bootrun
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
