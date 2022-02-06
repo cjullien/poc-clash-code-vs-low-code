@@ -22,7 +22,6 @@ public class Person {
 
     private String firstname;
     private String name;
-    private String name2;
     private String email;
     //private transient String image = randomImage();
 
