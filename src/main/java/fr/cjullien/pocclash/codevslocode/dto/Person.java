@@ -20,35 +20,16 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String firstname;
+    private String username;
     private String name;
     private String email;
-    //private transient String image = randomImage();
+    private String phone;
+    private transient String picture = randomImage();
 
     public String randomImage() {
-        String image;
-        int width = 1000;
-        int height = 1000;
-        BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                int a = (int) (Math.random() * 256); //alpha
-                int r = (int) (Math.random() * 256); //red
-                int g = (int) (Math.random() * 256); //green
-                int b = (int) (Math.random() * 256); //blue
-
-                int p = (a << 24) | (r << 16) | (g << 8) | b; //pixel
-
-                img.setRGB(x, y, p);
-            }
-        }
-        try {
-            var baos = new ByteArrayOutputStream();
-            ImageIO.write(img, "png", baos);
-            image = new String(baos.toByteArray(), StandardCharsets.UTF_8);
-            return image;
-        } catch (IOException e) {
-            throw new RuntimeException();
-        }
+        int random = (int) (Math.random() * 100);
+        if(random%2 == 0) 
+            return "iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAABqElEQVR4nOzTIUoeABiH8X3bl3aAhcWF3eDbwsqawSQfiEXxDt5BDyAIYjNYBYNdg1kQi+ghTILJI5henvL7HeD/hod3ef3j/Muko187o/t/jq9G9++eZ/e/jq7zKQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQGy5sX06euDm5ffo/uPD1uj+7cXf0X0fEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsSWh/vvowdWr99G93+eHIzub779H933ATEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkBssX76PnrgbH0/ur+7txjd/3e5Gt33ATEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkDsIwAA//9sVRhUug4wsAAAAABJRU5ErkJggg==";
+        return "iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAABqklEQVR4nOzTIUoeABiH8W18YRcYKxvsDEtbWZjgEcSiSbPewBN8WG2mD8EjaLSatItgsZhEFETwCKaXp/x+B/i/4eFdLFfrnya93m2N7r+8/Rnd3107Gt3/MrrOhwSICRATICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYALHF8+ly9MDZw//R/R+3h6P7O/fHo/s+ICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgt9r8+jR643DwY3b/+9Xd0//f299F9HxATICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEPl+c/Bs9cL7aGN3f+3kzuv949W103wfEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkBMgJgAsfcAAAD//9zOGzjCIJaCAAAAAElFTkSuQmCC";
     }
 }
