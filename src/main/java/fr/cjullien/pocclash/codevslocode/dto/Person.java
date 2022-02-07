@@ -28,7 +28,6 @@ public class Person {
     private String email;
     @NotEmpty
     private String phone;
-    
     private boolean isDev;
     @Lob
     //@JsonIgnore
