@@ -1,16 +1,17 @@
 package fr.cjullien.pocclash.codevslocode.config;
 
-import org.springframework.context.annotation.Component;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+
+import fr.cjullien.pocclash.codevslocode.dto.Person;
+
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import fr.cjullien.pocclash.codevslocode.Person;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 
+@Configuration
+public class ExposeEntityIdRestMvcConfiguration implements RepositoryRestConfigurer {
 
-@Component
-public class ExposeEntityIdRestMvcConfiguration extends RepositoryRestConfigurerAdapter {
-
-  @Override
-  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
     config.exposeIdsFor(Person.class);
   }
 }
