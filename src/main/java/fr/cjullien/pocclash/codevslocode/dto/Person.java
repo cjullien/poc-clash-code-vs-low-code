@@ -30,6 +30,6 @@ public class Person {
     private String phone;
     private boolean isDev;
     @Lob
-    @JsonIgnore
+    //@JsonIgnore
     private String picture;
 }
