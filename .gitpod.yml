@@ -8,8 +8,9 @@ tasks:
     init: gradle build --continuous & 
     command: gp sync-done bundle
   - name: gradle-bootrun
-    init: gp sync-await bundle
-    command: gradle bootrun
+    command: |
+      gp sync-await bundle
+      gradle bootrun
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
