@@ -13,7 +13,7 @@ tasks:
       gradle bootrun
 ports:
   - port: 8080
-    onOpen: open-browser
+    #onOpen: open-browser
     visibility: public
 vscode:
   extensions:
