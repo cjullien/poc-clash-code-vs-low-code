@@ -12,6 +12,6 @@ import fr.cjullien.pocclash.codevslocode.dto.Person;
 @CrossOrigin(origins = "*")
 @RepositoryRestResource(collectionResourceRel = "users", path = "users", itemResourceRel = "user")
 public interface PersonneRepository extends PagingAndSortingRepository<Person, Long> {
-    List<Person> findByName(@Param("name") String name);
+    List<Person> findByLastname(@Param("lastname") String lastname);
     List<Person> findByEmail(String email);
 }

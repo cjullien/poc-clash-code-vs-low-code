@@ -23,7 +23,7 @@ public class Person {
     @NotEmpty
     private String firstname;
     @NotEmpty
-    private String name;
+    private String lastname;
     @NotEmpty
     private String email;
     @NotEmpty
