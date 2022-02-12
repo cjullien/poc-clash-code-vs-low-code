@@ -11,6 +11,10 @@ tasks:
     command: |
       gp sync-await bundle
       gradle bootrun
+ports:
+  - port: 8080
+    onOpen: open-browser
+    visibility: public
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
